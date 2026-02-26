@@ -1,0 +1,273 @@
+[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "partner",
+				"type": "address"
+			}
+		],
+		"name": "AlreadyMarried",
+		"type": "error"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "name1",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "name2",
+				"type": "string"
+			},
+			{
+				"internalType": "address payable",
+				"name": "partner1",
+				"type": "address"
+			},
+			{
+				"internalType": "address payable",
+				"name": "partner2",
+				"type": "address"
+			}
+		],
+		"name": "createMarriage",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "provided",
+				"type": "address"
+			}
+		],
+		"name": "InvalidAddress",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "NotAPartner",
+		"type": "error"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "contractAddress",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "partner1",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "partner2",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "nftTokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "MarriageCreated",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "getAllMarriages",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "contractAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "partner1",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "partner2",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name1",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "name2",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "createdAt",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nftTokenId",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct MarriageFactory.MarriageRecord[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "partner",
+				"type": "address"
+			}
+		],
+		"name": "getMarriagesByPartner",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "partner",
+				"type": "address"
+			}
+		],
+		"name": "isAlreadyMarried",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "marriages",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "contractAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "partner1",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "partner2",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "name1",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "name2",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "createdAt",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "nftTokenId",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "marriagesByPartner",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "nftContract",
+		"outputs": [
+			{
+				"internalType": "contract MarriageNFT",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
